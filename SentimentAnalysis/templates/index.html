@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NLP Emotion Detector</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>Sentiment Analysis</h1>
+    <textarea id="inputText" placeholder="Type or speak something..."></textarea>
+    <div class="buttons">
+      <button onclick="analyzeText()">Analyze</button>
+      <button onclick="startListening()">🎙️ Speak</button>
+    </div>
+    <div id="output"></div>
+  </div>
+
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
