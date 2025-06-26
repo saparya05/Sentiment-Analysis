@@ -16,6 +16,15 @@ def process_text(text):
     polarity = round(blob.sentiment.polarity, 2)
     subjectivity = round(blob.sentiment.subjectivity, 2)
 
+
+    if polarity > 0:
+        sentiment = "Positive"
+    elif polarity < 0:
+        sentiment = "Negetive"
+    else:
+        sentiment = "Neutral"
+
+
     if "hate" in text.lower() or "angry" in text.lower() or "Nonscence" in text.lower() or "stupid" in text.lower():
         emotion = "Angry 😠"
     elif "disgust" in text.lower() or "eww" in text.lower():
@@ -27,12 +36,12 @@ def process_text(text):
     elif polarity < -0.3:
         emotion = "Sad 😢"
     else:
-        emotion = "Neutral 😐"
+        emotion = "Normal 😐"
     
     emotion_replies = {
         "Happy 😊": "That's wonderful to hear!",
         "Sad 😢": "I'm here for you.",
-        "Angry 😠": "Take a deep breath, it'll be okay.",
+        "Angry 😠": "We understand your frustration and appreciate the input. Take a deep breath, and stay calm.",
         "Disgusted 🤢": "That's quite unpleasant!",
         "Surprised 😲": "Wow, that's unexpected!",
         "Neutral 😐": "Thanks for sharing your thoughts."
@@ -48,6 +57,7 @@ def process_text(text):
         "dependencies": dependencies,
         "polarity": polarity,
         "subjectivity": subjectivity,
+        "Sentiment": sentiment,
         "emotion": emotion,
         "reply": reply,
     }

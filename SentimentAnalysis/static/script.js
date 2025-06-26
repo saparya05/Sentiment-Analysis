@@ -10,15 +10,16 @@ function analyzeText() {
   .then(response => response.json())
   .then(data => {
     const output = `
-      <strong>🧾 Tokens:</strong> ${data.tokens.join(", ")}<br>
-      <strong>📚 Lemmas:</strong> ${data.lemmas.join(", ")}<br>
-      <strong>🔠 POS Tags:</strong> ${JSON.stringify(data.pos_tags)}<br>
-      <strong>🏷️ Named Entities:</strong> ${JSON.stringify(data.entities)}<br>
-      <strong>📐 Dependencies:</strong> ${JSON.stringify(data.dependencies)}<br>
-      <strong>📊 Sentiment Polarity:</strong> ${data.polarity}<br>
-      <strong>🧠 Subjectivity:</strong> ${data.subjectivity}<br>
-      <strong>💬 Detected Emotion:</strong> <span style="color:yellow">${data.emotion}</span><br>
-      <strong>🤖 Smart Reply:</strong> <span style="color:#00ffcc">${data.reply}</span>
+      <strong> Tokens:</strong> ${data.tokens.join(", ")}<br>
+      <strong> Lemmas:</strong> ${data.lemmas.join(", ")}<br>
+      <strong> POS Tags:</strong> ${JSON.stringify(data.pos_tags)}<br>
+      <strong> Named Entities:</strong> ${JSON.stringify(data.entities)}<br>
+      <strong> Dependencies:</strong> ${JSON.stringify(data.dependencies)}<br>
+      <strong> Polarity:</strong> ${data.polarity}<br>
+      <strong> Subjectivity:</strong> ${data.subjectivity}<br>
+      <strong> Analysed Sentiment:</strong> <span style="color:yellow">${data.Sentiment}</span><br>
+      <strong> Detected Emotion:</strong> <span style="color:yellow">${data.emotion}</span><br>
+      <strong> Smart Reply:</strong> <span style="color:#00ffcc">${data.reply}</span>
     `;
     document.getElementById("output").innerHTML = output;
   });
